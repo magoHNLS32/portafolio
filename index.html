@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wi| Ingeniero en Desarrollo de Softwaredth=device-width, initial-scale=1.0">
+    <title>Cisneros Margarito  </title>
+    <meta name="description" content="Portafolio profesional de Margarito Cisneros - Desarrollador con experiencia en entornos industriales">
+    <meta name="keywords" content="desarrollador web, Python, bases de datos, ingeniería de software, portafolio, México">
+    <meta name="author" content="Margarito Cisneros">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Margarito Cisneros | Ingeniero en Desarrollo de Software">
+    <meta property="og:description" content="Portafolio profesional - Experiencia industrial combinada con desarrollo de software">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#inicio" class="logo">
+                <!--<span class="logo-icon">💻</span>-->
+                <span class="logo-text"><span class="logo-highlight"> Cisneros</span></span>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <!--<li><a href="#experiencia">Experiencia</a></li>-->
+                <li><a href="#proyectos">Proyectos</a></li>
+                <!--<li><a href="#habilidades">Habilidades</a></li>-->
+                <li><a href="#certificaciones">Certificaciones</a></li>
+               <!-- <li><a href="#contacto" class="btn-nav">Contacto</a></li>-->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección Hero / Inicio -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <h1 class="hero-title">
+                    <!--<span class="title-line">Desarrollador con</span>-->
+                    <span class="title-line"><span class="title-highlight">Experiencia</span></span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Combinando conocimiento práctico
+                    de entornos industriales con desarrollo 
+                    de software moderno para crear soluciones
+                    tecnológicas que resuelven problemas reales.
+                </p>
+                <!--
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">
+                        <i class="fas fa-code"></i> Ver Proyectos
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Contactar
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-text">Años en Industria</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-text">Proyectos Web</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-text">Compromiso</span>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-container">
+                    <!-- Aquí va tu foto de perfil -->
+                    <img src="data:image/jpeg;base64,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" 
+                    alt="Margarito Cisneros" class="profile-img">
+                    <!--<div class="image-badge">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Disponible para Trabajar</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="section sobre-mi">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Sobre <span class="title-highlight">Mí</span></h2>
+                <p class="section-subtitle">Mi trayectoria y visión profesional</p>
+            </div>
+            
+            <div class="sobre-mi-content">
+                <div class="sobre-mi-text" data-aos="fade-right">
+                    <p class="sobre-mi-paragraph">
+                        Soy un profesional con <strong>experiencia práctica en entornos industriales</strong>, habiendo trabajado en áreas como soldadura, operación de maquinaria extruder y mantenimiento de sistemas. Esta experiencia me ha brindado una comprensión profunda de los procesos operativos y la importancia de la eficiencia en el mundo real.
+                    </p>
+                    
+                    <p class="sobre-mi-paragraph">
+                        Actualmente, estoy <strong>combinando esta perspectiva práctica con una sólida formación en Ingeniería de Software</strong>. Mi objetivo es cerrar la brecha entre el entorno físico y el digital, utilizando tecnologías web modernas para optimizar procesos y crear herramientas que agreguen valor tangible desde el primer despliegue.
+                    </p>
+                    
+                    <div class="sobre-mi-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Creo que la mejor tecnología es aquella que resuelve problemas reales y mejora procesos existentes.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                </div>
+                
+                <div class="sobre-mi-info" data-aos="fade-left">
+                    <div class="info-card">
+                        <div class="info-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <div>
+                                <h4>Educación</h4>
+                                <p>Ingeniería en Desarrollo de Software</p>
+                                <small>Universidad Ciudadana de Monterrey</small>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Monterrey Nuevo Leon</p>
+                                <small>Disponible para trabajo presencial y remoto</small>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Disponibilidad</h4>
+                                <p>Inmediata</p>
+                                <small>Busco oportunidades full-time</small>
+                            </div>
+                        </div>
+                        
+                         <!--<div class="info-item">
+                            <i class="fas fa-language"></i>
+                            <div>
+                               <h4>Idiomas</h4>
+                                <p>Español (Nativo)</p>
+                                <small>Inglés Técnico</small>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    <section id="experiencia" class="section experiencia">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Mi <span class="title-highlight">Experiencia</span></h2>
+                <p class="section-subtitle">Trayectoria profesional y logros</p>
+            </div>
+            
+            <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Presente</div>
+                    <div class="timeline-content">
+                        <h3>Vendedor de Frutas</h3>
+                        <h4>Merco</h4>
+                        <p>Gestión de inventarios, atención al cliente y optimización de procesos de venta. Implementé un sistema básico de registro que redujo los errores de inventario en un 30%.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Gestión de Inventarios</span>
+                            <span class="tag">Atención al Cliente</span>
+                            <span class="tag">Optimización de Procesos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2015 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>Inspector de Calidad</h3>
+                        <h4>NEMAK</h4>
+                        <p>Control de calidad en procesos de producción, auditorías internas y captura de datos. Desarrollé planillas en Excel que automatizaron reportes, ahorrando 10 horas semanales en procesos manuales.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Control de Calidad</span>
+                            <span class="tag">Auditorías</span>
+                            <span class="tag">Automatización Excel</span>
+                            <span class="tag">Análisis de Datos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2010 - 2013</div>
+                    <div class="timeline-content">
+                        <h3>Operador de Maquinaria Extruder</h3>
+                        <h4>Plásticos y Molduras</h4>
+                        <p>Operación de maquinaria especializada, mantenimiento preventivo y correctivo. Participé en la implementación de mejoras en procesos que aumentaron la eficiencia en un 15%.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Operación de Maquinaria</span>
+                            <span class="tag">Mantenimiento</span>
+                            <span class="tag">Mejora de Procesos</span>
+                            <span class="tag">Soldadura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experiencia-highlight" data-aos="fade-up">
+                <div class="highlight-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="highlight-content">
+                    <h3>Transición hacia la Tecnología</h3>
+                    <p>Mi experiencia en la industria me ha dotado de habilidades transferibles valiosas: resolución de problemas complejos, trabajo bajo presión, atención al detalle y comprensión de flujos de trabajo. Estas habilidades, combinadas con mi formación en desarrollo de software, me posicionan para crear soluciones tecnológicas que realmente entiendan las necesidades del usuario final.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="section proyectos">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Mis <span class="title-highlight">Proyectos</span></h2>
+                <p class="section-subtitle">Desarrollo web y aplicaciones prácticas</p>
+            </div>
+            
+            <div class="proyectos-grid">
+                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="proyecto-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desafío Ambiental">
+                        <div class="proyecto-overlay">
+                            <a href="https://xn--desafo-ambiental-dsb.on.drv.tw/web/" target="_blank" class="proyecto-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3>Desafío Ambiental</h3>
+                        <p>Sitio web educativo sobre conciencia ambiental, desarrollado con HTML5, CSS3 y JavaScript. Implementa diseño responsive y contenido interactivo.</p>
+                        <div class="proyecto-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <a href="https://xn--desafo-ambiental-dsb.on.drv.tw/web/" target="_blank" class="btn btn-small">
+                            <i class="fas fa-eye"></i> Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="proyecto-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creador de CV Interactivo">
+                        <div class="proyecto-overlay">
+                            <a href="https://magohnls32.github.io/CV_INTERACTIVO/" target="_blank" class="proyecto-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3>Creador de CV Interactivo</h3>
+                        <p>Aplicación web que permite crear currículums profesionales de forma interactiva. Los usuarios pueden personalizar plantillas y exportar en formato PDF.</p>
+                        <div class="proyecto-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Local Storage</span>
+                        </div>
+                        <a href="https://magodymcn-32.icu/index.html"  target="_blank" class="btn btn-small">
+                            <i class="fas fa-eye"></i> Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="proyecto-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="proyecto-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Primer Portafolio Web">
+                        <div class="proyecto-overlay">
+                            <a href="https://magohnls32.github.io/web/" target="_blank" class="proyecto-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3>Primer trabajo Web</h3>
+                        <p>implementando conceptos básicos de front-end y
+                            diseño web responsive desde cero. esto para una pequeña empresa
+                            el código completo no se muestra por derechos de privacidad, pero es un concepto
+                            similar.
+
+                        </p>
+                        <div class="proyecto-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Responsive Design</span>
+                            <span>GitHub Pages</span>
+                        </div>
+                        <a href="https://magohnls32.github.io/web/" target="_blank" class="btn btn-small">
+                            <i class="fas fa-eye"></i> Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--DYM-->
+            <div class="proyecto-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="proyecto-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creador de CV Interactivo">
+                        <div class="proyecto-overlay">
+                            <a href="https://magohnls32.github.io/CV_INTERACTIVO/" target="_blank" class="proyecto-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3></h3>
+                        <p>DYM es un proyecto colaborativo desarrollado junto a un compañero universitario, donde asumí la responsabilidad del desarrollo frontend, mientras mi compañero se encargó del backend.
+
+                                Durante el proceso, utilizamos asistencia de IA para optimizar ciertas funcionalidades y agilizar tareas específicas de desarrollo.
+
+                                El proyecto se encuentra actualmente en fase de desarrollo, con iteraciones continuas de mejora y nuevas implementaciones.
+
+                                Versión más detallada (para portafolio o descripción técnica):
+
+                                Proyecto: DYM – Sistema de Punto de Venta
+                                Colaboración universitaria – Rol: Desarrollador Frontend
+
+                                Lideré el diseño y desarrollo de la interfaz de usuario (UI/UX) y la experiencia frontend del sistema.
+
+                                Trabajé en coordinación con un compañero encargado del desarrollo backend y la lógica del servidor.
+
+                                Implementamos herramientas de IA como apoyo en la generación de código, optimización de funciones y resolución de problemas técnicos.
+
+                                El proyecto sigue en activo desarrollo, con planes de integración de nuevas funcionalidades como autenticación de usuarios, módulo administrativo y análisis de rentabilidad.</p>
+                                <a href="https://www.youtube.com/watch?v=Zea2W9FuIZY&t=147s"  target="_blank" class="btn btn-small">
+                            <i class="fas fa-eye"></i> ver video 
+                        </a>
+                                <div class="proyecto-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>python</span>
+                            <span>SQLite</span>
+                        </div>
+                        <a href=" https://drive.google.com/file/d/1LPV2xqb99VlJ-j75RyHP5ZFebZYMLLif/view?usp=sharing"  target="_blank" class="btn btn-small">
+                            <i class="fas fa-eye"></i> Descargar  Proyecto
+                        </a>
+                    </div>
+                </div>
+             <!--
+            <div class="proyectos-cta" data-aos="fade-up">
+                <p>¿Interesado en ver más proyectos o colaborar en uno?</p>
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fas fa-handshake"></i> Hablemos de tu Proyecto
+                </a>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="habilidades" class="section habilidades">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Mis <span class="title-highlight">Habilidades</span></h2>
+                <p class="section-subtitle">Conocimientos técnicos y competencias profesionales</p>
+            </div>
+            
+            <div class="habilidades-grid">
+                <div class="habilidad-categoria" data-aos="fade-up">
+                    <h3 class="categoria-title">
+                        <i class="fas fa-code"></i> Desarrollo Web
+                    </h3>
+                    <div class="habilidad-items">
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>HTML5</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>CSS3</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>JavaScript</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>Responsive Design</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="habilidad-categoria" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="categoria-title">
+                        <i class="fas fa-database"></i> Bases de Datos
+                    </h3>
+                    <div class="habilidad-items">
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>MySQL</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>Diseño de Bases</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="habilidad-categoria" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="categoria-title">
+                        <i class="fas fa-tools"></i> Herramientas Industriales
+                    </h3>
+                    <div class="habilidad-items">
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>Microsoft Office Suite</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>Mantenimiento de Equipos</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="habilidad-item">
+                            <div class="habilidad-info">
+                                <span>Operación de Maquinaria</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="habilidad-bar">
+                                <div class="habilidad-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             -->
+                    <div class="habilidades-soft" data-aos="fade-up">
+                <h3 class="soft-title">Herramientas de software que he utilizado</h3>
+                <div class="soft-skills">
+                    <span class="soft-skill">Word</span>
+                    <span class="soft-skill">VS Code</span>
+                    <span class="soft-skill">FileZilla</span>
+                    <span class="soft-skill">Conexiones SSH</span>
+                    <span class="soft-skill">Excel</span>
+                    <span class="soft-skill">PowerPoint</span>
+                    <span class="soft-skill">HTML</span>
+                    <span class="soft-skill">CSS</span>
+                </div>
+            </div>
+    </section>
+
+    <!-- Sección Certificaciones -->
+    <section id="certificaciones" class="section certificaciones">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Mis <span class="title-highlight">Certificaciones</span></h2>
+                <p class="section-subtitle">Formación continua y desarrollo profesional</p>
+            </div>
+            
+            <div class="certificaciones-grid" data-aos="fade-up">
+                <div class="certificacion-card">
+                    <div class="certificacion-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Desarrollo WEB</h3>
+                    <p>Fundamentos de desarrollo web front-end</p>
+                    <a href="https://drive.google.com/file/d/1sBzPqigr0krtFVX5Tc1aFOt76XNNxT_T/view?usp=sharing" 
+                       target="_blank" class="btn btn-small">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+                
+                <div class="certificacion-card">
+                    <div class="certificacion-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>POO en Python</h3>
+                    <p>Programación Orientada a Objetos con Python</p>
+                    <a href="https://drive.google.com/file/d/1CzIF3oFWv6dv9nexTfxpCVBb4ybRj30j/view?usp=sharing" 
+                       target="_blank" class="btn btn-small">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+                
+                <div class="certificacion-card">
+                    <div class="certificacion-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Bases de Datos</h3>
+                    <p>Introducción a bases de datos relacionales</p>
+                    <a href="https://drive.google.com/file/d/18kRfmquVSp_a5DFWNBqArEFPa9WtGIaw/view?usp=sharing" 
+                       target="_blank" class="btn btn-small">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+                
+                <div class="certificacion-card">
+                    <div class="certificacion-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Admin. Bases de Datos 2</h3>
+                    <p>Administración avanzada de bases de datos</p>
+                    <a href="https://drive.google.com/file/d/1GDYjJNvrlFmCz9eKYSlh4hSr2i0GySgX/view?usp=sharing" 
+                       target="_blank" class="btn btn-small">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+                
+                <div class="certificacion-card">
+                    <div class="certificacion-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Introducción al Desarrollo WEB</h3>
+                    <p>Fundamentos de desarrollo web</p>
+                    <a href="https://drive.google.com/file/d/1hsxKZHhSc3CtV0QY6-B2qDuIg7kHUu0P/view?usp=sharing" 
+                       target="_blank" class="btn btn-small">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+                
+                <div class="certificacion-card">
+                    <div class="certificacion-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Meta etiquetas</h3>
+                    <p>Optimización SEO y meta etiquetas</p>
+                    <a href="https://drive.google.com/file/d/1dp3h1hMWNerf_Ki3HTA4hsp3bkYMr8oj/view?usp=sharing" 
+                       target="_blank" class="btn btn-small">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section id="contacto" class="section contacto">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Contáct<span class="title-highlight">ame</span></h2>
+                <p class="section-subtitle">datos</p>
+            </div>
+            
+            <div class="contacto-content">
+                <div class="contacto-info" data-aos="fade-right">  
+                    <div class="contacto-details">
+                        <div class="contacto-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Correo Electrónico</h4>
+                                <a href="mailto:mgomcn@hotmail.com">mgomcn@hotmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <a href="tel:+528121583465">+52 812 158 3465</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Ciudad de México, México</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-item">
+                            <i class="fas fa-clock"></i>
+                          
+                                <h4>Disponibilidad</h4>
+                                <p>Respuesta en 24 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-social">
+                        <a href="https://github.com/magohnls32" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:mgomcn@hotmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1sBzPqigr0krtFVX5Tc1aFOt76XNNxT_T" target="_blank" class="social-link">
+                            <i class="fas fa-file-certificate"></i>
+                        </a>
+                    </div>
+                </div>-->
+                <!--
+                <div class="contacto-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <input type="text" id="asunto" name="asunto" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                        
+                        <div class="form-notice">
+                            <small><i class="fas fa-info-circle"></i> Los campos marcados con * son obligatorios</small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#inicio" class="logo">
+                        <span class="logo-icon">💻</span>
+                        <span class="logo-text">Margarito <span class="logo-highlight"> Cisneros</span></span>
+                    </a>
+                </div>
+                
+               <!-- <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> mgomcn@hotmail.com</p>
+                    <p><i class="fas fa-phone"></i> +52 812 158 3465</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Monterrey N.L</p>
+                </div>
+            </div> -->
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Margarito Cisneros. Todos los derechos reservados.</p>
+               <!-- <p>campo para colocar texto <i class="fas fa-heart" style="color: #ef4444;"></i></p>-->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+    
+    <!-- Inicializar AOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html>
